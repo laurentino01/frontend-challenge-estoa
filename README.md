@@ -4,7 +4,6 @@ Esse repositório é o nosso desafio para avaliar o quão bom desenvolvedor fron
 
 Provavelmente você já está participando do nosso processo de contratação, mas se você caiu aqui por acaso, leia o documento até o final e caso haja interesse, você pode começar daqui mesmo.
 
-
 ## Sobre o desafio
 
 Esse é um desafio, não um teste ou uma prova de faculdade, portanto não há uma única resposta certa.
@@ -26,8 +25,8 @@ O que nós esperamos que você aprenda sobre a Estoa:
 
 1. Faça um _fork_ desse repositório para sua conta pessoal.
 2. As instruções do desafio se encontram no arquivo [`CHALLENGE.md`](/CHALLENGE.md).
-2. Resolva o desafio da forma que você julgar mais adequada.
-3. Preferencialmente utilize uma _branch_ chamada `desafio` ou com o seu nome (`nome-sobrenome`) para o desenvolvimento. E submeta o _pull-request_ para essa mesma _branch_.
+3. Resolva o desafio da forma que você julgar mais adequada.
+4. Preferencialmente utilize uma _branch_ chamada `desafio` ou com o seu nome (`nome-sobrenome`) para o desenvolvimento. E submeta o _pull-request_ para essa mesma _branch_.
 
 ## Considerações
 
