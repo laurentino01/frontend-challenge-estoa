@@ -13,14 +13,12 @@ export async function getStaticProps() {
 }
 
 export default function Home({ peoples }) {
-  const [charList, setCharList] = useState({});
-
-  async function getSpecie(reference) {
+  async function getRes(reference) {
     const res = await fetch(reference);
     const data = await res.json();
-    const specieName = data.name;
+    const result = data.name || data.title;
 
-    return specieName;
+    return result;
   }
 
   useEffect(() => {
@@ -29,14 +27,23 @@ export default function Home({ peoples }) {
         if (key === "species") {
           let speciesUrl = people[key].length !== 0 ? people[key][0] : null;
           if (speciesUrl !== null) {
-            getSpecie(speciesUrl).then((data) => {
-              people["species"] = data;
+            getRes(speciesUrl).then((data) => {
+              people[key] = data;
             });
           }
         }
-      }
 
-      console.log(people);
+        if (key === "films") {
+          let listFilms = [];
+          let arrFilms = people[key];
+          arrFilms.map((filmUrl) => {
+            getRes(filmUrl).then((film) => {
+              listFilms.push(film);
+              people[key] = listFilms;
+            });
+          });
+        }
+      }
     });
   }, []);
 
@@ -44,7 +51,13 @@ export default function Home({ peoples }) {
     <>
       <ul>
         {peoples.map((people) => (
-          <li>{people.species}</li>
+          <li className="mb-5">
+            <h2>{people.name}</h2>
+            <p>{people.species}</p>
+            {people.films.map((film) => (
+              <li>{film}</li>
+            ))}
+          </li>
         ))}
       </ul>
       <h1>teste</h1>
